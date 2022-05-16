@@ -1,9 +1,10 @@
-import { syncWeather } from "@cicciosgamino/openweather-apis";
+import { AsyncWeather } from "@cicciosgamino/openweather-apis";
 import http from "http";
 import { mondayuLogger } from "mondayu-logger"; // import your logger
 
 const apiKey = "<<your api key>>";
-const weatherAPI = new syncWeather();
+const weatherInitializer = new AsyncWeather();
+const weatherAPI = await weatherInitializer;
 
 const server = http.createServer(async (req, res) => {
   res.writeHead(200, { "Content-Type": "application/json" });
