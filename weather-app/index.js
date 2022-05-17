@@ -1,24 +1,17 @@
 import { AsyncWeather } from "@cicciosgamino/openweather-apis";
 import http from "http";
-import { mondayuLogger } from "mondayu-logger"; // import your logger
+// import your own logger
 
+// step 1: install lib and print temp to console
 const apiKey = "<<your api key>>";
 const weatherInitializer = new AsyncWeather();
 const weatherAPI = await weatherInitializer;
 
-const server = http.createServer(async (req, res) => {
-  res.writeHead(200, { "Content-Type": "application/json" });
+// step 2: server
+// create your server here from http module
+// example in the slides or here: https://nodejs.org/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/
 
-  // add usage of weatherAPI here
+// start your server
 
-  // log the temp
-
-  res.end(
-    JSON.stringify({
-      data: 'hello mondayU',
-    })
-  );
-});
-
-server.listen(8000);
+// step 3: install your logger and log temp and server start
 // log that the service has started
